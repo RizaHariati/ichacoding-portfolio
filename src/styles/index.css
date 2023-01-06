@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply w-full h-screen bg-black text-txLit2 font-extralight;
+  }
+
+  h1 {
+    @apply capitalize text-2xl font-poppins font-semibold;
+  }
+  h2 {
+    @apply capitalize text-xl font-poppins font-semibold;
+  }
+  h3 {
+    @apply capitalize text-lg font-poppins font-semibold;
+  }
+  h4 {
+    @apply capitalize text-base font-poppins font-semibold;
+  }
+  h5 {
+    @apply capitalize text-base font-poppins font-medium;
+  }
+}
+@layer components {
+  .test {
+    background-color: #eebbbb;
+    color: #dd8888;
+  }
+}

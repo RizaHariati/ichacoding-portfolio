@@ -1,0 +1,5 @@
+import { AppState } from "./interfaces";
+
+export const initialState: AppState = {
+  name: "icha",
+};
