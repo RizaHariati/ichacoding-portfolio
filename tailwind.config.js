@@ -10,7 +10,7 @@ module.exports = {
 
   theme: {
     transitionDuration: {
-      DEFAULT: "250ms",
+      DEFAULT: "500ms",
     },
 
     fontFamily: {
@@ -23,11 +23,13 @@ module.exports = {
         txDrk2: "#B0B0B0",
         txLit1: "#FFFFFF",
         txLit2: "#FBFAF1",
-        fillDrk: "#C8C9C1",
-        fillLit: "#F2F1EF",
+        fillDrk: "#3d3c3c",
+        fillDrkhover: "#494949",
+        fillDrkactive: "#6F6F6F",
         accent: "#dd8888",
         accentHover: "#a06060",
         accentActive: "#eebbbb",
+        accentOpacity: "#eebbbbbd",
       },
     },
   },

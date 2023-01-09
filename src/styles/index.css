@@ -8,24 +8,80 @@
   }
 
   h1 {
-    @apply capitalize text-2xl font-poppins font-semibold;
+    @apply capitalize text-2xl font-poppins font-medium;
   }
   h2 {
-    @apply capitalize text-xl font-poppins font-semibold;
+    @apply capitalize text-xl font-poppins font-normal;
   }
   h3 {
-    @apply capitalize text-lg font-poppins font-semibold;
+    @apply capitalize text-lg font-poppins font-normal;
   }
   h4 {
-    @apply capitalize text-base font-poppins font-semibold;
+    @apply capitalize text-base font-poppins font-normal;
   }
   h5 {
-    @apply capitalize text-base font-poppins font-medium;
+    @apply capitalize text-base font-poppins font-light;
   }
 }
 @layer components {
-  .test {
-    background-color: #eebbbb;
-    color: #dd8888;
+  .main-container {
+    height: calc(100vh - 80px);
+    @apply w-full overflow-y-scroll flex flex-col items-center justify-start;
+  }
+
+  .main-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-tagline {
+    @apply max-w-5xl 2xl:max-w-6xl font-normal mt-4 2xl:mt-10 px-3 md:px-0 text-center;
+  }
+
+  .tagline {
+    @apply font-light leading-5 2xl:text-3xl;
+  }
+
+  /* ---------------------------- slides ---------------------------- */
+
+  .slides-container {
+    @apply w-full grid grid-cols-1 md:grid-cols-2 p-2 md:p-4 2xl:py-10  gap-4 2xl:gap-x-0 2xl:gap-y-6 max-w-5xl 2xl:max-w-6xl 2xl:p-6;
+  }
+  .slides-content {
+    @apply w-full h-52 sm:h-56 2xl:h-72 bg-fillDrk bg-opacity-60 max-w-md mx-auto 2xl:max-w-lg  rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden  shadow-md  shadow-txDrk2;
+  }
+  .social-container {
+    @apply flex gap-1 items-center justify-center;
+  }
+
+  .slide-website {
+    @apply absolute left-0 top-0 w-full h-full group-hover:-left-full  transition-all z-10 overflow-hidden object-cover object-center;
+  }
+  .slide-base {
+    @apply absolute left-0 w-0 group-hover:w-full h-full  opacity-0 group-hover:opacity-100 grid grid-cols-6 sm:grid-cols-7 sm:gap-2 transition-all;
+  }
+  .slide-phone {
+    @apply col-span-2 w-full bg-purple-400 rounded-sm 2xl:rounded-md h-52 sm:h-56 2xl:h-72 overflow-hidden;
+  }
+
+  .slide-info {
+    @apply col-span-4 sm:col-span-5 p-2 overflow-hidden w-full flex flex-col gap-2;
+  }
+
+  .slide-description {
+    @apply h-3/5 text-sm overflow-y-scroll w-full leading-5 shadow-inner shadow-black px-2;
+  }
+
+  .slide-description::-webkit-scrollbar {
+    display: none;
+  }
+  /* ---------------------------- button ---------------------------- */
+  .icon-btn {
+    @apply w-8 h-8 sm:w-10 sm:h-10 z-10 object-cover object-center overflow-hidden rounded-sm shadow-sm  border-2 border-fillDrk group-hover:border-accentOpacity group-active:border-fillDrkactive transition-all group-hover:opacity-75;
+  }
+  .standard-btn {
+    @apply flex items-center justify-start bg-fillDrk bg-opacity-90 gap-2 w-28 sm:w-32 pl-3 rounded-sm hover:bg-accentOpacity active:bg-fillDrkactive transition-all;
+  }
+  .main-btn {
+    @apply flex items-center justify-between bg-fillDrk bg-opacity-60 gap-2 w-28 sm:w-32 pl-3 rounded-sm hover:bg-accentOpacity active:bg-fillDrkactive transition-all;
   }
 }

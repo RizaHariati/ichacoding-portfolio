@@ -1,3 +1,3 @@
 export interface AppState {
-  name: string;
+  allImages: any[];
 }
