@@ -13,6 +13,9 @@ const index = ({ data }: Props) => {
   } = useGlobalContext();
 
   useEffect(() => {
+    window.onbeforeunload = function () {
+      localStorage.clear();
+    };
     if (allImages.length < 1) {
       setTimeout(() => {
         dispatch({
@@ -23,6 +26,7 @@ const index = ({ data }: Props) => {
         });
       }, 1500);
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
