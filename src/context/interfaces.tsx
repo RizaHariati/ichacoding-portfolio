@@ -1,3 +1,5 @@
+import { AllImageType } from "./types.d";
+
 export interface AppState {
-  allImages: any[];
+  allImages: AllImageType[];
 }

@@ -1,16 +1,8 @@
 import React, { useEffect } from "react";
-import {
-  graphql,
-  HeadProps,
-  navigate,
-  PageRendererProps,
-  StaticQueryProps,
-} from "gatsby";
-import { PageProps } from "gatsby";
+import { graphql } from "gatsby";
 import { useGlobalContext } from "../context/AppProvider";
 import LoadingPage from "../components/LoadingPage";
 import Home from "../components/Home";
-import { PictureProps } from "gatsby-plugin-image/dist/src/components/picture";
 type Props = {
   data: any;
 };

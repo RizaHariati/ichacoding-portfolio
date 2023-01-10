@@ -4,13 +4,28 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="absolute bottom-0 h-8 sm:h-6 text-xs leading-3 flex flex-col sm:flex-row items-center justify-center text-center  bg-accent left-0 w-full z-10 font-thin">
-      <a href="https://www.freepik.com/pikisuperstar">
-        Background by pikisuperstar / Freepik *
-      </a>
-      <a href="https://www.vecteezy.com/free-vector/phone">
-        &nbsp; Phone Vectors by Vecteezy
-      </a>
+    <div className="footer-container">
+      <div className=" bg-accent w-full h-0.5 rounded-full mb-auto"></div>
+      <div className="footer-content">
+        <a href="https://www.freepik.com/pikisuperstar" className="footer-item">
+          Background by pikisuperstar / Freepik *
+        </a>
+        <a
+          href="https://www.vecteezy.com/free-vector/phone"
+          className="footer-item"
+        >
+          &nbsp; Phone Vectors by Vecteezy
+        </a>
+        <div className="footer-item">
+          <a target="_blank" href="https://icons8.com/icon/76948/cash">
+            &nbsp; Cash
+          </a>
+          icon by
+          <a target="_blank" href="https://icons8.com">
+            Icons8
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

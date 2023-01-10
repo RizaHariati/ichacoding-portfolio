@@ -18,14 +18,17 @@ module.exports = {
     },
 
     extend: {
+      boxShadow: {
+        outer: "2px 2px 6px 1px rgba(0, 0, 0, 0.3)",
+      },
       colors: {
-        txDrk1: "#6F6F6F",
-        txDrk2: "#B0B0B0",
-        txLit1: "#FFFFFF",
-        txLit2: "#FBFAF1",
-        fillDrk: "#3d3c3c",
-        fillDrkhover: "#494949",
-        fillDrkactive: "#6F6F6F",
+        textDrk: "#3f3f46",
+        textMed: "#52525b",
+        textLit: "#a1a1aa",
+        textLit: "#d4d4d8",
+        fillDrk: "#ffffff",
+        fillDrkhover: "#e4e4e7",
+        fillDrkactive: "#a1a1aa",
         accent: "#dd8888",
         accentHover: "#a06060",
         accentActive: "#eebbbb",

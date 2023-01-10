@@ -4,29 +4,36 @@
 
 @layer base {
   body {
-    @apply w-full h-screen bg-black text-txLit2 font-extralight;
+    @apply w-full h-screen bg-fillDrk text-textMed font-normal;
   }
 
   h1 {
-    @apply capitalize text-2xl font-poppins font-medium;
+    @apply capitalize text-2xl font-poppins font-semibold;
   }
   h2 {
-    @apply capitalize text-xl font-poppins font-normal;
+    @apply capitalize text-xl font-poppins font-medium;
   }
   h3 {
-    @apply capitalize text-lg font-poppins font-normal;
+    @apply capitalize text-lg font-poppins font-medium;
   }
   h4 {
-    @apply capitalize text-base font-poppins font-normal;
+    @apply capitalize text-base font-poppins font-medium;
   }
   h5 {
-    @apply capitalize text-base font-poppins font-light;
+    @apply capitalize text-base font-poppins font-normal;
   }
 }
 @layer components {
   .main-container {
-    height: calc(100vh - 80px);
-    @apply w-full overflow-y-scroll flex flex-col items-center justify-start;
+    height: calc(100vh - 120px);
+    @apply w-full overflow-y-scroll flex flex-col items-center justify-start pb-10 md:overflow-hidden md:pb-0;
+  }
+
+  @media screen and (min-width: 780px) {
+    .main-container {
+      height: calc(100vh - 82px);
+      @apply w-full overflow-y-scroll flex flex-col items-center justify-start pb-10 md:overflow-hidden md:pb-0;
+    }
   }
 
   .main-container::-webkit-scrollbar {
@@ -34,20 +41,23 @@
   }
 
   .main-tagline {
-    @apply max-w-5xl 2xl:max-w-6xl font-normal mt-4 2xl:mt-10 px-3 md:px-0 text-center;
+    @apply max-w-4xl 2xl:max-w-6xl font-medium mt-4 md:mt-2 2xl:mt-10 px-3 md:px-0 text-center;
   }
 
   .tagline {
-    @apply font-light leading-5 2xl:text-3xl;
+    @apply font-medium leading-5 text-lg md:text-xl 2xl:text-3xl;
   }
 
   /* ---------------------------- slides ---------------------------- */
 
   .slides-container {
-    @apply w-full grid grid-cols-1 md:grid-cols-2 p-2 md:p-4 2xl:py-10  gap-4 2xl:gap-x-0 2xl:gap-y-6 max-w-5xl 2xl:max-w-6xl 2xl:p-6;
+    @apply w-full grid grid-cols-1 md:grid-cols-2 px-4 py-2 md:px-4 2xl:py-10  gap-2  2xl:gap-x-0 2xl:gap-y-6 max-w-4xl 2xl:max-w-6xl 2xl:p-6;
+  }
+  .slides {
+    @apply flex flex-col gap-y-1 2xl:gap-y-3;
   }
   .slides-content {
-    @apply w-full h-52 sm:h-56 2xl:h-72 bg-fillDrk bg-opacity-60 max-w-md mx-auto 2xl:max-w-lg  rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden  shadow-md  shadow-txDrk2;
+    @apply w-full h-52 2xl:h-72 bg-fillDrk bg-opacity-70 max-w-sm mx-auto 2xl:max-w-lg rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden shadow-sm;
   }
   .social-container {
     @apply flex gap-1 items-center justify-center;
@@ -60,28 +70,69 @@
     @apply absolute left-0 w-0 group-hover:w-full h-full  opacity-0 group-hover:opacity-100 grid grid-cols-6 sm:grid-cols-7 sm:gap-2 transition-all;
   }
   .slide-phone {
-    @apply col-span-2 w-full bg-purple-400 rounded-sm 2xl:rounded-md h-52 sm:h-56 2xl:h-72 overflow-hidden;
+    @apply col-span-2 w-full rounded-sm 2xl:rounded-md h-52 2xl:h-72 overflow-hidden shadow-md shadow-textLit;
   }
 
   .slide-info {
-    @apply col-span-4 sm:col-span-5 p-2 overflow-hidden w-full flex flex-col gap-2;
+    @apply col-span-4 sm:col-span-5 p-2 2xl:p-4 overflow-hidden w-full flex flex-col gap-y-1 2xl:gap-y-2;
   }
 
   .slide-description {
-    @apply h-3/5 text-sm overflow-y-scroll w-full leading-5 shadow-inner shadow-black px-2;
+    @apply h-3/5 text-sm 2xl:text-base lg:leading-5 overflow-y-scroll w-full leading-5 shadow-inner shadow-textLit p-2 sm:px-3;
   }
 
   .slide-description::-webkit-scrollbar {
     display: none;
   }
+
+  .slide-logo {
+    @apply w-5 h-5 2xl:w-8 2xl:h-8 transition-all z-10 overflow-hidden object-fill bg-textLit rounded-full object-center;
+  }
+  .slide-title-container {
+    @apply w-full  max-w-sm mx-auto 2xl:max-w-lg flex gap-2 items-center justify-start;
+  }
   /* ---------------------------- button ---------------------------- */
   .icon-btn {
-    @apply w-8 h-8 sm:w-10 sm:h-10 z-10 object-cover object-center overflow-hidden rounded-sm shadow-sm  border-2 border-fillDrk group-hover:border-accentOpacity group-active:border-fillDrkactive transition-all group-hover:opacity-75;
+    @apply w-8 h-8 sm:w-10 sm:h-10 z-10 object-cover object-center overflow-hidden rounded-sm shadow-sm  border-2 border-fillDrk group-hover:border-textLit group-active:border-fillDrkactive transition-all group-hover:opacity-75;
   }
   .standard-btn {
-    @apply flex items-center justify-start bg-fillDrk bg-opacity-90 gap-2 w-28 sm:w-32 pl-3 rounded-sm hover:bg-accentOpacity active:bg-fillDrkactive transition-all;
+    @apply flex items-center justify-center bg-fillDrk bg-opacity-90 gap-2 w-28 sm:w-32  rounded-sm hover:bg-accent hover:text-fillDrk text-accent active:bg-fillDrkactive transition-all shadow-textLit shadow-sm text-sm 2xl:text-base;
   }
   .main-btn {
-    @apply flex items-center justify-between bg-fillDrk bg-opacity-60 gap-2 w-28 sm:w-32 pl-3 rounded-sm hover:bg-accentOpacity active:bg-fillDrkactive transition-all;
+    @apply flex items-center justify-between bg-fillDrk bg-opacity-60 gap-2 w-28 sm:w-32 pl-3 rounded-sm hover:bg-textLit active:bg-fillDrkactive transition-all shadow-sm hover:shadow-textMed;
+  }
+
+  .footer-container {
+    @apply absolute bottom-0 h-12 md:h-6 text-xs leading-3 flex flex-col items-center justify-center text-center w-full z-10 font-normal px-3;
+  }
+  .footer-item {
+    @apply text-accent hover:text-accentActive transition-all flex cursor-pointer;
+  }
+  .footer-content {
+    @apply h-12 md:h-6 text-xs leading-3 flex flex-col md:flex-row items-center justify-center text-center w-full z-10 font-normal;
+  }
+
+  /* ----------------------------- about ---------------------------- */
+
+  .about-container {
+    height: calc(100vh - 130px);
+    @apply mx-auto w-full max-w-4xl 2xl:max-w-6xl font-medium mt-4 md:mt-2 2xl:mt-10 px-4 md:px-2 overflow-y-scroll;
+  }
+  .about-container::-webkit-scrollbar {
+    display: none;
+  }
+  .about-me {
+    @apply grid grid-cols-1 sm:grid-cols-9 gap-2 bg-fillDrk bg-opacity-30 rounded-sm shadow-sm overflow-hidden mb-2;
+  }
+
+  .about-me-photo {
+    @apply mx-auto md:p-4  mt-2 sm:mt-4 col-span-2 bg-pink-500 w-28 h-28 md:w-40 md:h-40 rounded-full;
+  }
+
+  .about-me-message {
+    @apply col-span-7 w-full p-4 md:pr-10 leading-5;
+  }
+  .about-skill {
+    @apply about-me gap-1 p-1 px-4;
   }
 }

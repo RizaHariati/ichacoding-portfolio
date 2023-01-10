@@ -7,3 +7,8 @@ export type ProjectType = {
   mainProgram: string;
   dependencies: string[];
 };
+
+export type AllImageType = {
+  gatsbyImageData: any;
+  original: { src: string };
+};
