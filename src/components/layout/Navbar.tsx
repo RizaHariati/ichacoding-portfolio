@@ -35,7 +35,7 @@ const Navbar = () => {
     });
   }, []);
 
-  if (!image.iconImage && !image.iconLink) return <div>Loading</div>;
+  if (!image.iconImage && !image.iconLink) return <div></div>;
   else {
     return (
       <div className="h-12 sm:h-14 w-full px-2 mb-1 ">
