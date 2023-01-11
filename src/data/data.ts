@@ -12,7 +12,7 @@ export const projects: ProjectType[] = [
     ],
     mainProgram: "React.js",
     dependencies:
-      "Tailwind CSS,Typescript, useContext, useReducer, react-router-dom, React datepicker",
+      "Tailwind CSS,Typescript, useContext, useReducer, React datepicker",
   },
   {
     id: "IC002",
@@ -23,7 +23,7 @@ export const projects: ProjectType[] = [
       "This is a project for my own amusement. I love watching movies and Tv shows. But I tend to forget, whether I have watched the show or not. So using Laravel 8, I created the database website. This web also serves as REST API provider, so I can consume the data using other data that I created next. The design is based on the Netflix website design. All the data is thanks to The Movie DB",
     ],
     mainProgram: "Laravel 8",
-    dependencies: "Tailwind CSS, Redux Toolkit, Formik/Yup",
+    dependencies: "Laravel-mix, Bootstrap, Axios, Sass",
   },
 
   {
@@ -38,7 +38,7 @@ export const projects: ProjectType[] = [
       "When I created this website, I just learned Tailwind CSS. And I really like it, so I use it here.",
     ],
     mainProgram: "Next.js",
-    dependencies: ["Tailwind CSS", "Redux Toolkit", "Formik/Yup"],
+    dependencies: "Typescript, Tailwind CSS, Redux Toolkit, Formik/Yup",
   },
   {
     id: "IC004",
@@ -52,7 +52,7 @@ export const projects: ProjectType[] = [
       "I'm using Next.JS and Typescript as the core of this web design with the help of Redux/toolkit, Redux/persist and Next Redux Wrapper. For styling I use FontAwesome Icons and Tailwind CSS",
     ],
     mainProgram: "Next.js",
-    dependencies: ["Laravel-mix", "Bootstrap", "Axios", "Sass"],
+    dependencies: "Tailwind CSS, Redux Toolkit, Redux Persist, Formik/Yup",
   },
 ];
 

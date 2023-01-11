@@ -1,38 +1,108 @@
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 import React from "react";
 import Layout from "../components/layout/Layout";
 import { useGlobalContext } from "../context/AppProvider";
-
-type Props = {};
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import ImageModal from "../components/modal/ImageModal";
+import { ShowModalType } from "../context/types.d";
 
 const Projects = ({ pageContext: { project } }: any) => {
   const {
-    state: { allImages },
+    state: { portfolioImages },
   } = useGlobalContext();
 
-  if (!allImages || (allImages && Object.keys(allImages).length < 1))
+  const [showModal, setShowModal] = useState<ShowModalType>({
+    status: false,
+    type: "",
+    value: [],
+  });
+
+  const showingModal = (type: string, value: IGatsbyImageData[]) => {
+    setShowModal({
+      status: true,
+      type,
+      value,
+    });
+  };
+
+  if (
+    !portfolioImages ||
+    (portfolioImages && Object.keys(portfolioImages).length < 1)
+  ) {
     return <div></div>;
-  else {
+  } else {
+    const image = portfolioImages[project.slug];
     return (
       <Layout>
         <div className="project-container">
+          {showModal.status && (
+            <ImageModal setShowModal={setShowModal} showModal={showModal} />
+          )}
           <div className="project-info-container">
             <div className="project-phone">
-              <div className="project-phone-image"></div>
+              <button
+                className="project-phone-image"
+                // onClick={() =>
+                //   showingModal("phone", [image.mainphone!, image.subphone!])
+                // }
+              >
+                <GatsbyImage
+                  image={image.mainphone!}
+                  objectFit="fill"
+                  className=" w-32 h-52 "
+                  objectPosition="center"
+                  alt={project.title}
+                />
+              </button>
             </div>
             <div className="project-info">
-              <h2>{project.title}</h2>
-              <div className="project-description">
-                {project.description.map((item: string, index: number) => {
-                  return <p key={index}>{item}</p>;
-                })}
-              </div>
+              <h2 className="font-bold">{project.title}</h2>
+              <div className="project-description">{project.description}</div>
               <p>Main Program : {project.mainProgram}</p>
-              <div>
-                <p>Dependencies :</p>
-              </div>
+              <p>Dependencies : {project.dependencies.toString()}</p>
+              <a
+                href={project.url}
+                className="standard-btn p-1 absolute right-4 bottom-4"
+              >
+                <FontAwesomeIcon icon={faPaperPlane} />
+                Visit website
+              </a>
             </div>
           </div>
-          <div className="project-image-container"></div>
+          <div className="project-image-container">
+            <button
+              className="project-image "
+              onClick={() =>
+                showingModal("website", [image.short!, image.mainphone!])
+              }
+            >
+              <GatsbyImage
+                image={image.short!}
+                objectFit="fill"
+                className="h-52  2xl:h-80"
+                objectPosition="center"
+                alt="image short"
+                loading="eager"
+              />
+            </button>
+            <button
+              className="project-image"
+              onClick={() =>
+                showingModal("website", [image.subpage!, image.subphone!])
+              }
+            >
+              <GatsbyImage
+                image={image.subpage!}
+                objectFit="fill"
+                className="h-52  2xl:h-80"
+                objectPosition="center"
+                alt="image subphone"
+                loading="eager"
+              />
+            </button>
+          </div>
         </div>
       </Layout>
     );

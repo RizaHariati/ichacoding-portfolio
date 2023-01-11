@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Social from "./layoutComponents/Social";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
 import { useGlobalContext } from "../../context/AppProvider";
 

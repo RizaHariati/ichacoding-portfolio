@@ -16,7 +16,7 @@ export const result = graphql`
   query MyQuery {
     allImageSharp {
       nodes {
-        gatsbyImageData(height: 400, placeholder: DOMINANT_COLOR)
+        gatsbyImageData(height: 300, placeholder: DOMINANT_COLOR)
         original {
           src
         }
@@ -53,15 +53,25 @@ export const AppProvider = ({ children }: Props) => {
                 ...portfolioImages[slug],
                 short: getImage(image.gatsbyImageData),
               };
-            } else if (image.original.src.includes("phone")) {
+            } else if (image.original.src.includes("mainphone")) {
               portfolioImages[slug] = {
                 ...portfolioImages[slug],
-                phone: getImage(image.gatsbyImageData),
+                mainphone: getImage(image.gatsbyImageData),
               };
             } else if (image.original.src.includes("logo")) {
               portfolioImages[slug] = {
                 ...portfolioImages[slug],
                 logo: getImage(image.gatsbyImageData),
+              };
+            } else if (image.original.src.includes("subphone")) {
+              portfolioImages[slug] = {
+                ...portfolioImages[slug],
+                subphone: getImage(image.gatsbyImageData),
+              };
+            } else if (image.original.src.includes("subpage")) {
+              portfolioImages[slug] = {
+                ...portfolioImages[slug],
+                subpage: getImage(image.gatsbyImageData),
               };
             }
           } else if (image.original.src.includes("profileIcon")) {

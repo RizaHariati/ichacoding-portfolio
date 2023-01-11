@@ -70,7 +70,7 @@
     @apply absolute left-0 w-0 group-hover:w-full h-full  opacity-0 group-hover:opacity-100 grid grid-cols-6 sm:grid-cols-7 sm:gap-2 transition-all;
   }
   .slide-phone {
-    @apply col-span-2 w-full rounded-sm 2xl:rounded-md h-52 2xl:h-72 overflow-hidden shadow-md shadow-textLit;
+    @apply col-span-2 w-full rounded-sm 2xl:rounded-md h-52 2xl:h-72 overflow-hidden shadow-md shadow-fillDrkactive;
   }
 
   .slide-info {
@@ -78,7 +78,7 @@
   }
 
   .slide-description {
-    @apply h-3/5 text-sm 2xl:text-base lg:leading-5 overflow-y-scroll w-full leading-5 shadow-inner shadow-textLit p-2 sm:px-3;
+    @apply h-3/5 text-sm 2xl:text-base lg:leading-5 overflow-y-scroll w-full leading-5 shadow-inner shadow-fillDrkactive p-2 sm:px-3;
   }
 
   .slide-description::-webkit-scrollbar {
@@ -97,13 +97,16 @@
   }
 
   .standard-btn {
-    @apply flex items-center justify-center bg-fillDrk bg-opacity-90 gap-2 w-28 sm:w-32  rounded-sm hover:bg-accent hover:text-fillDrk text-accent active:bg-fillDrkactive transition-all shadow-textLit shadow-sm text-sm 2xl:text-base;
+    @apply flex items-center justify-center bg-fillDrk bg-opacity-90 gap-2 w-28 sm:w-32  rounded-sm hover:bg-accent hover:text-fillDrk text-accent active:bg-fillDrkactive transition-all shadow-fillDrkactive shadow-sm text-sm 2xl:text-base;
   }
 
   .main-btn {
     @apply flex items-center justify-between bg-fillDrk bg-opacity-80 gap-2 w-28 sm:w-32 pl-3 rounded-sm hover:bg-textLit active:bg-fillDrkactive transition-all shadow-sm hover:shadow-textMed;
   }
 
+  .close-btn {
+    @apply absolute top-1 right-1 text-red-600;
+  }
   .footer-container {
     @apply absolute bottom-0 h-12 md:h-6 text-xs leading-3 flex flex-col items-center justify-center text-center w-full z-10 font-normal px-3;
   }
@@ -124,7 +127,7 @@
     display: none;
   }
   .about-me {
-    @apply grid grid-cols-1 sm:grid-cols-9 bg-fillDrk bg-opacity-30 rounded-sm shadow-sm overflow-hidden mb-2 items-center;
+    @apply grid grid-cols-1 md:grid-cols-9 bg-fillDrk bg-opacity-30 rounded-sm shadow-sm overflow-hidden mb-2 items-center;
   }
 
   .about-me-photo {
@@ -144,15 +147,45 @@
   }
 
   .project-info-container {
-    @apply about-me p-3 md:p-5;
-  }
-  .project-phone {
-    @apply col-span-2 w-full h-full hidden sm:block bg-accentActive;
-  }
-  .project-phone-image {
-    @apply col-span-2 w-32 h-52 hidden sm:block bg-pink-400 rounded-md overflow-hidden;
+    @apply about-me p-3 md:p-5 pb-10 items-start relative;
   }
   .project-info {
-    @apply col-span-7 w-full flex flex-col;
+    /* color:#777781; */
+    @apply col-span-7 w-full flex flex-col gap-y-1;
+  }
+  .project-phone {
+    @apply col-span-2 w-full h-full hidden sm:block;
+  }
+
+  .project-description {
+    @apply leading-5 text-textLit;
+  }
+  .project-phone-image {
+    @apply col-span-2 w-32 h-52 hidden md:block rounded-md overflow-hidden transition-all cursor-pointer z-10;
+  }
+
+  .project-image-container {
+    @apply w-full grid grid-cols-1 md:grid-cols-2 px-4 py-2 md:px-4 2xl:py-10  gap-2  2xl:gap-x-0 2xl:gap-y-6 max-w-4xl 2xl:max-w-6xl 2xl:p-6;
+  }
+  .project-image {
+    @apply w-full h-44 sm:h-52 2xl:h-64 bg-fillDrk bg-opacity-70 max-w-sm mx-auto 2xl:max-w-md rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden shadow-sm hover:scale-105 transition-all;
+  }
+
+  /* ----------------------------- modal ---------------------------- */
+
+  .modal-base-show {
+    @apply fixed top-0 left-0 bg-textDrk bg-opacity-50 z-10 w-full h-screen transition-all;
+  }
+  .modal-base-hide {
+    @apply modal-base-show opacity-0 hidden;
+  }
+  .modal-container {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-xs md:max-w-2xl h-96 bg-fillDrk mx-auto w-fit md:w-full z-20 rounded-sm p-5 flex items-center justify-center transition-all 2xl:scale-125;
+  }
+  .modal-image-website {
+    @apply hidden h-full md:block mx-auto;
+  }
+  .modal-image-phone {
+    @apply block h-full md:hidden mx-auto w-48;
   }
 }

@@ -18,8 +18,10 @@ export type ImageType = {
 export type PortfolioImageType = {
   long?: IGatsbyImageData;
   short?: IGatsbyImageData;
-  phone?: IGatsbyImageData;
+  mainphone?: IGatsbyImageData;
   logo?: IGatsbyImageData;
+  subphone?: IGatsbyImageData;
+  subpage?: IGatsbyImageData;
 };
 export type AllImageType = {
   iconImage?: IGatsbyImageData;
@@ -29,4 +31,10 @@ export type AllImageType = {
 
 export type PortfolioType = {
   [key: string]: PortfolioImageType;
+};
+
+export type ShowModalType = {
+  status: boolean;
+  type: string;
+  value: IGatsbyImageData[];
 };

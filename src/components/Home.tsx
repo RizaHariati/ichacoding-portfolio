@@ -43,7 +43,7 @@ const Home = (props: Props) => {
                         className="h-52  2xl:h-72"
                         objectPosition="center"
                         alt={title}
-                        loading="lazy"
+                        loading="eager"
                       />
                     </div>
                     <div className="slide-website block sm:hidden 2xl:block">
@@ -56,7 +56,7 @@ const Home = (props: Props) => {
                       />
                     </div>
                     <SlideInfo
-                      imageData={image.phone!}
+                      imageData={image.subphone!}
                       title={title}
                       description={description}
                       mainProgram={mainProgram}

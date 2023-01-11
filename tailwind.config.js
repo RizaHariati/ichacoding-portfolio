@@ -24,8 +24,7 @@ module.exports = {
       colors: {
         textDrk: "#3f3f46",
         textMed: "#52525b",
-        textLit: "#a1a1aa",
-        textLit: "#d4d4d8",
+        textLit: "#777781",
         fillDrk: "#ffffff",
         fillDrkhover: "#e4e4e7",
         fillDrkactive: "#a1a1aa",
