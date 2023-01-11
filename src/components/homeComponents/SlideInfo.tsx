@@ -3,6 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { Link } from "gatsby";
 
 type Props = {
   imageData: any;
@@ -10,6 +11,7 @@ type Props = {
   description: string[];
   mainProgram: string;
   url: string;
+  slug: string;
 };
 
 const SlideInfo = ({
@@ -18,12 +20,13 @@ const SlideInfo = ({
   description,
   mainProgram,
   url,
+  slug,
 }: Props) => {
   return (
     <div className="slide-base">
       <div className="slide-phone">
         <GatsbyImage
-          image={imageData.phone}
+          image={imageData}
           objectFit="fill"
           className=" h-52  2xl:h-72 "
           objectPosition="center"
@@ -36,10 +39,10 @@ const SlideInfo = ({
         <p className="slide-description">{description[0].slice(0, 200)}</p>
         <p className="font-medium">Main Program : {mainProgram}</p>
         <div className="w-full flex gap-2 mt-1">
-          <button className="standard-btn">
+          <Link to={`/projects/${slug}`} className="standard-btn">
             <FontAwesomeIcon icon={faInfoCircle} />
             More...
-          </button>
+          </Link>
           <a href={url} className="standard-btn">
             <FontAwesomeIcon icon={faPaperPlane} />
             Website

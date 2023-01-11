@@ -1,5 +1,6 @@
-import { AllImageType } from "./types.d";
+import { AllImageType, PortfolioType } from "./types.d";
 
 export interface AppState {
-  allImages: AllImageType[];
+  allImages: AllImageType;
+  portfolioImages: PortfolioType;
 }

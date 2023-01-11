@@ -8,7 +8,7 @@ const Error = (props: Props) => {
     <Layout>
       <div className="main-container">
         <div className="tagline-container">
-          <h5 className="tagline">Page not found</h5>
+          <h3 className="tagline mt-5">404 - Page not found</h3>
         </div>
       </div>
     </Layout>

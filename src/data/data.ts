@@ -11,14 +11,8 @@ export const projects: ProjectType[] = [
       "When I created this website, I just learned Tailwind CSS. And I really like it, so I use it here.",
     ],
     mainProgram: "React.js",
-    dependencies: [
-      "Tailwind CSS",
-      "Typescript",
-      "useContext",
-      "useReducer",
-      "react-router-dom",
-      "React datepicker",
-    ],
+    dependencies:
+      "Tailwind CSS,Typescript, useContext, useReducer, react-router-dom, React datepicker",
   },
   {
     id: "IC002",
@@ -29,7 +23,7 @@ export const projects: ProjectType[] = [
       "This is a project for my own amusement. I love watching movies and Tv shows. But I tend to forget, whether I have watched the show or not. So using Laravel 8, I created the database website. This web also serves as REST API provider, so I can consume the data using other data that I created next. The design is based on the Netflix website design. All the data is thanks to The Movie DB",
     ],
     mainProgram: "Laravel 8",
-    dependencies: ["Tailwind CSS", "Redux Toolkit", "Formik/Yup"],
+    dependencies: "Tailwind CSS, Redux Toolkit, Formik/Yup",
   },
 
   {
@@ -37,7 +31,7 @@ export const projects: ProjectType[] = [
 
     url: "https://rsuripsumoharjo-model.netlify.app/",
     title: "RS Urip Sumoharjo",
-    slug: "rs_uripsumoharjo",
+    slug: "rs-uripsumoharjo",
     description: [
       " A website design proposal for a local hospital in Bandar Lampung. Inspired by Mayo Clinic's website. A very simple design, easy-to-use, informative but not too crowded with too many useless details.",
       "The core of this website design is Next.JS, supported by Redux Toolkit, Formik, Yup and React leaflet",

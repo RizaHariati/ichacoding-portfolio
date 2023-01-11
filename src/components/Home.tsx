@@ -11,86 +11,81 @@ type Props = {};
 
 const Home = (props: Props) => {
   const {
-    state: { allImages },
+    state: { portfolioImages },
   } = useGlobalContext();
 
-  return (
-    <Layout>
-      <div className="main-container">
-        <div className="main-tagline">
-          <h2 className="tagline">
-            Connecting your goals to your website design and application
-          </h2>
-        </div>
-        <div className="slides-container">
-          {projects.map((project: ProjectType) => {
-            const { id, title, slug, description, mainProgram, url } = project;
-            let imageData: any = {};
-            allImages.map((image) => {
-              if (image.original.src.includes(slug)) {
-                if (image.original.src.includes("long")) {
-                  imageData["long"] = getImage(image.gatsbyImageData);
-                } else if (image.original.src.includes("short")) {
-                  imageData["short"] = getImage(image.gatsbyImageData);
-                } else if (image.original.src.includes("phone")) {
-                  imageData["phone"] = getImage(image.gatsbyImageData);
-                } else if (image.original.src.includes("logo")) {
-                  imageData["logo"] = getImage(image.gatsbyImageData);
-                }
-              }
-              return "";
-            });
-
-            return (
-              <div className=" slides">
-                <div key={id} className="slides-content group">
-                  <div className="slide-website hidden sm:block 2xl:hidden">
-                    <GatsbyImage
-                      image={imageData.long}
-                      objectFit="fill"
-                      className="h-52  2xl:h-72"
-                      objectPosition="center"
-                      alt={title}
+  if (
+    !portfolioImages ||
+    (portfolioImages && Object.keys(portfolioImages).length < 1)
+  ) {
+    return <div></div>;
+  } else {
+    return (
+      <Layout>
+        <div className="main-container">
+          <div className="main-tagline">
+            <h2 className="tagline">
+              Connecting your goals to your website design and application
+            </h2>
+          </div>
+          <div className="slides-container">
+            {projects.map((project: ProjectType) => {
+              const { id, title, description, slug, mainProgram, url } =
+                project;
+              const image = portfolioImages[slug];
+              return (
+                <div className=" slides" key={id}>
+                  <div className="slides-content group">
+                    <div className="slide-website hidden sm:block 2xl:hidden">
+                      <GatsbyImage
+                        image={image.long!}
+                        objectFit="fill"
+                        className="h-52  2xl:h-72"
+                        objectPosition="center"
+                        alt={title}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="slide-website block sm:hidden 2xl:block">
+                      <GatsbyImage
+                        image={image.short!}
+                        objectFit="fill"
+                        className=" h-52  2xl:h-72 "
+                        objectPosition="center"
+                        alt={title}
+                      />
+                    </div>
+                    <SlideInfo
+                      imageData={image.phone!}
+                      title={title}
+                      description={description}
+                      mainProgram={mainProgram}
+                      url={url}
+                      slug={slug}
                     />
                   </div>
-                  <div className="slide-website block sm:hidden 2xl:block">
-                    <GatsbyImage
-                      image={imageData.short}
-                      objectFit="fill"
-                      className=" h-52  2xl:h-72 "
-                      objectPosition="center"
-                      alt={title}
-                    />
+                  <div className=" slide-title-container">
+                    <div className="slide-logo  ">
+                      <GatsbyImage
+                        image={image.logo!}
+                        className="w-5 h-5 2xl:w-8 2xl:h-8 "
+                        objectFit="fill"
+                        objectPosition="center"
+                        alt={title}
+                      />
+                    </div>
+                    <h5 className="font-semibold text-base 2xl:text-2xl">
+                      {title}
+                    </h5>
                   </div>
-                  <SlideInfo
-                    imageData={imageData}
-                    title={title}
-                    description={description}
-                    mainProgram={mainProgram}
-                    url={url}
-                  />
                 </div>
-                <div className=" slide-title-container">
-                  <div className="slide-logo  ">
-                    <GatsbyImage
-                      image={imageData.logo}
-                      className="w-5 h-5 2xl:w-8 2xl:h-8 "
-                      objectFit="fill"
-                      objectPosition="center"
-                      alt={title}
-                    />
-                  </div>
-                  <h5 className="font-semibold text-base 2xl:text-2xl">
-                    {title}
-                  </h5>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </Layout>
-  );
+      </Layout>
+    );
+  }
 };
 
 export default Home;

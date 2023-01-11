@@ -5,37 +5,14 @@ import { Link, navigate } from "gatsby";
 import { useLocation } from "@reach/router";
 import { useGlobalContext } from "../../context/AppProvider";
 
-import { AllImageType } from "../../context/types.d";
-
 const Navbar = () => {
   const { pathname } = useLocation();
   const {
     state: { allImages },
   } = useGlobalContext();
-  const [image, setimage] = useState<{ iconLink: any; iconImage: any }>({
-    iconLink: null,
-    iconImage: null,
-  });
 
-  useEffect(() => {
-    if (allImages.length < 1) navigate("/");
-    allImages?.map((image: AllImageType) => {
-      if (image.original.src.includes("profileIcon")) {
-        setimage((prev) => ({
-          ...prev,
-          iconImage: getImage(image.gatsbyImageData),
-        }));
-      } else if (image.original.src.includes("icon192")) {
-        setimage((prev) => ({
-          ...prev,
-          iconLink: getImage(image.gatsbyImageData),
-        }));
-      }
-      return "";
-    });
-  }, []);
-
-  if (!image.iconImage && !image.iconLink) return <div></div>;
+  if (!allImages || (allImages && Object.keys(allImages).length < 1))
+    return <div></div>;
   else {
     return (
       <div className="h-12 sm:h-14 w-full px-2 mb-1 ">
@@ -47,7 +24,7 @@ const Navbar = () => {
           >
             <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover object-center overflow-hidden hover:opacity-75 transition-all sm:hidden md:block">
               <GatsbyImage
-                image={image.iconLink}
+                image={allImages?.iconLink!}
                 className="w-8 h-8 sm:w-10 sm:h-10  rounded-full"
                 objectFit="cover"
                 objectPosition="center"
@@ -60,12 +37,12 @@ const Navbar = () => {
           </Link>
 
           <div className="flex items-center justify-center gap-1">
-            <Link to={pathname === "/about/" ? "/" : "/about/"}>
+            <Link to={pathname === "/" ? "/about/" : "/"}>
               <div className="main-btn group">
-                <h4>{pathname === "/about/" ? "Home" : "About"}</h4>
+                <h4>{pathname === "/" ? "About" : "Home"}</h4>
                 <div className="icon-btn">
                   <GatsbyImage
-                    image={image.iconImage}
+                    image={allImages?.iconImage!}
                     className="w-8 h-8 sm:w-10 sm:h-10 "
                     objectFit="cover"
                     objectPosition="center"
