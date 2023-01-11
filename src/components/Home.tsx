@@ -36,7 +36,7 @@ const Home = (props: Props) => {
               return (
                 <div className=" slides" key={id}>
                   <div className="slides-content group">
-                    <div className="slide-website hidden sm:block 2xl:hidden">
+                    <div className="slide-website hidden sm:block ">
                       <GatsbyImage
                         image={image.long!}
                         objectFit="fill"
@@ -46,7 +46,7 @@ const Home = (props: Props) => {
                         loading="eager"
                       />
                     </div>
-                    <div className="slide-website block sm:hidden 2xl:block">
+                    <div className="slide-website block sm:hidden ">
                       <GatsbyImage
                         image={image.short!}
                         objectFit="fill"
