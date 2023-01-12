@@ -6,9 +6,9 @@ export const projects: ProjectType[] = [
     title: "BayarPlanner",
     slug: "bayarplanner",
     description: [
-      " A website design proposal for a local hospital in Bandar Lampung. Inspired by Mayo Clinic's website. A very simple design, easy-to-use, informative but not too crowded with too many useless details.",
-      "The core of this website design is Next.JS, supported by Redux Toolkit, Formik, Yup and React leaflet",
-      "When I created this website, I just learned Tailwind CSS. And I really like it, so I use it here.",
+      "BayarPlanner is a website that schedules and records daily financial transactions, also calculates data to create simple invoices.",
+      "Created using React JS, makes it easier to work with a lot of date related libraries, such as React DatePicker and DayJS",
+      "Even so, the main calendar design is costumed made instead of using a ready-use library, so it can have more flexibility to handle different functions accordingly to activities that may be different each day.",
     ],
     mainProgram: "React.js",
     dependencies:
@@ -20,7 +20,9 @@ export const projects: ProjectType[] = [
     title: "SudahNonton",
     slug: "sudahnonton",
     description: [
-      "This is a project for my own amusement. I love watching movies and Tv shows. But I tend to forget, whether I have watched the show or not. So using Laravel 8, I created the database website. This web also serves as REST API provider, so I can consume the data using other data that I created next. The design is based on the Netflix website design. All the data is thanks to The Movie DB",
+      "SudahNonton is a movie and TV Shows database website that also serves as REST API provider that can be consume by other website or application.",
+      "The design is based on the Netflix website design using real data for The Movie DB and I chose to use Laravel so it can be both be used as Front end as well as Back End at the same time",
+      "I watched and I like all of the movies and TV shows that are shown on this website, so people will be able to watch it if they need a recommendation for movie night",
     ],
     mainProgram: "Laravel 8",
     dependencies: "Laravel-mix, Bootstrap, Axios, Sass",
@@ -33,9 +35,9 @@ export const projects: ProjectType[] = [
     title: "RS Urip Sumoharjo",
     slug: "rs-uripsumoharjo",
     description: [
-      " A website design proposal for a local hospital in Bandar Lampung. Inspired by Mayo Clinic's website. A very simple design, easy-to-use, informative but not too crowded with too many useless details.",
+      "A website design proposal for a local hospital in Bandar Lampung. The design wasn't approved by my client but I can keep it for my own portfolio",
+      "Inspired by Mayo Clinic's website. A very simple design, easy-to-use, informative but not too crowded with too many useless details.",
       "The core of this website design is Next.JS, supported by Redux Toolkit, Formik, Yup and React leaflet",
-      "When I created this website, I just learned Tailwind CSS. And I really like it, so I use it here.",
     ],
     mainProgram: "Next.js",
     dependencies: "Typescript, Tailwind CSS, Redux Toolkit, Formik/Yup",
@@ -47,9 +49,9 @@ export const projects: ProjectType[] = [
     title: "AzriClone",
     slug: "azriclone",
     description: [
-      "This website is based on Facebook's website design, mainly to showcase my ability in accessing and processing data with Rest API. Since the focus is on the API, only some of the elements related to API are functional and the rest is just dummies ",
-      "Thanks to DUMMYAPI.IO whose providing free ready to use API Service filled with dummy data",
-      "I'm using Next.JS and Typescript as the core of this web design with the help of Redux/toolkit, Redux/persist and Next Redux Wrapper. For styling I use FontAwesome Icons and Tailwind CSS",
+      "This website is based on Facebook's website design, mainly to showcase my ability in accessing and processing data with Rest API.",
+      "All mockup data in this website are from DUMMYAPI.IO, a free ready to use API Service filled with dummy data",
+      "Combining Typescript with Redux/toolkit, Redux/persist and Next Redux Wrapper, was a bit of a challenge for me, but turned out to be very useful for later use",
     ],
     mainProgram: "Next.js",
     dependencies: "Tailwind CSS, Redux Toolkit, Redux Persist, Formik/Yup",

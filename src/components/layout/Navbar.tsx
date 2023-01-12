@@ -15,7 +15,7 @@ const Navbar = () => {
     return <div></div>;
   else {
     return (
-      <div className="h-12 sm:h-14 w-full px-2 mb-1 ">
+      <div className="h-14 w-full px-2 mb-1 ">
         <div className="h-full flex items-center justify-between px-2 max-w-4xl 2xl:max-w-6xl mx-auto">
           <Link
             to="/"

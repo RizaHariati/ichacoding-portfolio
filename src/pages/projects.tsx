@@ -54,7 +54,7 @@ const Projects = ({ pageContext: { project } }: any) => {
                   <GatsbyImage
                     image={image.mainphone!}
                     objectFit="fill"
-                    className=" w-32 h-52 "
+                    className=" w-32 h-52 2xl:h-80"
                     objectPosition="center"
                     alt={project.title}
                   />

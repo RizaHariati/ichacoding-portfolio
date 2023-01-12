@@ -10,13 +10,16 @@ type Props = {
 const Layout = ({ children }: Props) => {
   return (
     <div className="relative h-screen w-full ">
-      <StaticImage
-        src="../../images/background_dark.jpg"
-        alt="background"
-        layout="constrained"
-        placeholder="dominantColor"
-        className=" fixed top-0 left-0 w-full h-screen overflow-hidden resize-y -z-10 "
-      />
+      <div className="absolute top-0 left-0  h-screen overflow-hidden resize-y -z-10">
+        <StaticImage
+          src="../../images/background_dark.jpg"
+          alt="background"
+          layout="constrained"
+          placeholder="dominantColor"
+          className=" h-screen overflow-hidden resize-y "
+        />
+      </div>
+
       <Navbar />
       {children}
       <Footer />

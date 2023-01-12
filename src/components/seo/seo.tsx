@@ -69,6 +69,9 @@ type HeadProps = {
 };
 export const Head = ({ title, description }: HeadProps) => (
   <SEO title={title} description={description}>
-    <p className="-z-20 fixed left-1/2">IchaCodes by Riza hariati </p>
+    <p className="-z-10 fixed left-1/2 -translate-x-1/2 text-center top-2 text-xs flex flex-row gap-4">
+      Powered by Gatsby.JS copyright &copy;{new Date().getFullYear()} Riza
+      hariati for IchaCoding
+    </p>
   </SEO>
 );

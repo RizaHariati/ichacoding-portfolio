@@ -24,7 +24,7 @@ const Home = (props: Props) => {
       <Layout>
         <div className="main-container">
           <div className="main-tagline">
-            <h2 className="tagline text-center ">
+            <h2 className="tagline">
               Connecting your Business goals to your website design and
               application
             </h2>
@@ -41,7 +41,7 @@ const Home = (props: Props) => {
                       <GatsbyImage
                         image={image.long!}
                         objectFit="fill"
-                        className="h-52  2xl:h-72"
+                        className=" h-48 sm:h-52 2xl:h-72"
                         objectPosition="center"
                         alt={title}
                         loading="eager"
@@ -51,7 +51,7 @@ const Home = (props: Props) => {
                       <GatsbyImage
                         image={image.short!}
                         objectFit="fill"
-                        className=" h-52  2xl:h-72 "
+                        className="  h-48 sm:h-52 2xl:h-72 "
                         objectPosition="center"
                         alt={title}
                       />

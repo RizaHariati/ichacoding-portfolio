@@ -6,15 +6,14 @@ type Props = {};
 const LoadingPage = (props: Props) => {
   return (
     <Layout>
-      <div className=" main-container ">
-        <div className="flex flex-col items-center justify-between h-full py-10">
-          <h4 className="text-accent mt-24 md:text-xl ">
+      <div
+        className=" main-container "
+        style={{ height: "calc(100vh - 100px)" }}
+      >
+        <div className="main-tagline">
+          <h2 className="tagline text-center text-base md:text-2xl text-accent ">
             Success is a Series of Small Wins
-          </h4>
-          <p className="text-sm text-textLit">
-            Powered by Gatsby.JS copyright &copy;{new Date().getFullYear()} Riza
-            hariati for IchaCoding
-          </p>
+          </h2>
         </div>
       </div>
     </Layout>
