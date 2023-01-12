@@ -2,8 +2,11 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `IchaCoding Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `IchaCodes`,
+    description: `Portfolio of websites made by IchaCodes`,
+    owner: `@rizahariati`,
+    image: `/images/snippet.png`,
+    siteUrl: `https://www.ichacodes.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -11,7 +14,7 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",
-    "gatsby-plugin-google-gtag",
+    // "gatsby-plugin-google-gtag",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
 

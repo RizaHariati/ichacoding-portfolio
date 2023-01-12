@@ -26,13 +26,13 @@
 @layer components {
   .main-container {
     height: calc(100vh - 100px);
-    @apply w-full overflow-y-scroll flex flex-col items-center justify-start pb-10 md:overflow-hidden md:pb-0;
+    @apply w-full overflow-y-scroll flex flex-col items-center justify-start md:overflow-hidden md:pb-0;
   }
 
   @media screen and (min-width: 780px) {
     .main-container {
-      height: calc(100vh - 82px);
-      @apply w-full overflow-y-scroll flex flex-col items-center justify-start pb-10 md:overflow-hidden md:pb-0;
+      height: calc(100vh - 80px);
+      @apply w-full overflow-y-scroll flex flex-col items-center justify-start md:overflow-hidden md:pb-0 md:justify-evenly;
     }
   }
 
@@ -108,20 +108,20 @@
     @apply absolute top-1 right-1 text-red-600;
   }
   .footer-container {
-    @apply absolute bottom-0 h-12 md:h-6 text-xs leading-3 flex flex-col items-center justify-center text-center w-full z-10 font-normal px-3;
+    @apply absolute bottom-0 md:bottom-0 text-xs  py-1 h-fit leading-3 flex flex-col items-center justify-center text-center w-full z-10 font-normal px-3 overflow-hidden;
   }
   .footer-item {
     @apply text-accent hover:text-accentActive transition-all flex cursor-pointer;
   }
   .footer-content {
-    @apply h-12 md:h-6 text-xs leading-3 flex flex-col md:flex-row items-center justify-center text-center w-full z-10 font-normal;
+    @apply text-xs leading-3 flex flex-col md:flex-row items-center justify-center text-center w-full z-10 font-normal;
   }
 
   /* ----------------------------- about ---------------------------- */
 
   .about-container {
     height: calc(100vh - 130px);
-    @apply mx-auto w-full max-w-4xl 2xl:max-w-6xl font-medium mt-4 md:mt-2 2xl:mt-10 px-4 md:px-2 overflow-y-scroll;
+    @apply mx-auto w-full max-w-4xl 2xl:max-w-6xl font-medium mt-4 md:mt-2 2xl:mt-10 px-4 md:px-2 overflow-y-scroll md:overflow-hidden;
   }
   .about-container::-webkit-scrollbar {
     display: none;

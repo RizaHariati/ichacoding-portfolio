@@ -2,7 +2,6 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import { useGlobalContext } from "../../context/AppProvider";
 
 type Props = {
   children: React.ReactNode;

@@ -7,6 +7,7 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import ImageModal from "../components/modal/ImageModal";
 import { ShowModalType } from "../context/types.d";
+import { Head } from "../components/seo/seo";
 
 const Projects = ({ pageContext: { project } }: any) => {
   const {
@@ -35,76 +36,85 @@ const Projects = ({ pageContext: { project } }: any) => {
   } else {
     const image = portfolioImages[project.slug];
     return (
-      <Layout>
-        <div className="project-container">
-          {showModal.status && (
-            <ImageModal setShowModal={setShowModal} showModal={showModal} />
-          )}
-          <div className="project-info-container">
-            <div className="project-phone">
+      <>
+        <Head title={project.title} description={project.description[0]} />
+        <Layout>
+          <div className="project-container">
+            {showModal.status && (
+              <ImageModal setShowModal={setShowModal} showModal={showModal} />
+            )}
+            <div className="project-info-container">
+              <div className="project-phone">
+                <button
+                  className="project-phone-image"
+                  // onClick={() =>
+                  //   showingModal("phone", [image.mainphone!, image.subphone!])
+                  // }
+                >
+                  <GatsbyImage
+                    image={image.mainphone!}
+                    objectFit="fill"
+                    className=" w-32 h-52 "
+                    objectPosition="center"
+                    alt={project.title}
+                  />
+                </button>
+              </div>
+              <div className="project-info">
+                <h2 className="font-bold">{project.title}</h2>
+                <div className="project-description">
+                  {project.description.map(
+                    (projectItem: string, projectIndex: number) => {
+                      return <p key={projectIndex}>{projectItem}</p>;
+                    }
+                  )}
+                </div>
+                <p>Main Program : {project.mainProgram}</p>
+                <p>Dependencies : {project.dependencies.toString()}</p>
+                <a
+                  href={project.url}
+                  className="standard-btn p-1 absolute right-4 bottom-4"
+                >
+                  <FontAwesomeIcon icon={faPaperPlane} />
+                  Visit website
+                </a>
+              </div>
+            </div>
+            <div className="project-image-container">
               <button
-                className="project-phone-image"
-                // onClick={() =>
-                //   showingModal("phone", [image.mainphone!, image.subphone!])
-                // }
+                className="project-image "
+                onClick={() =>
+                  showingModal("website", [image.short!, image.mainphone!])
+                }
               >
                 <GatsbyImage
-                  image={image.mainphone!}
+                  image={image.short!}
                   objectFit="fill"
-                  className=" w-32 h-52 "
+                  className="h-52  2xl:h-80"
                   objectPosition="center"
-                  alt={project.title}
+                  alt="image short"
+                  loading="eager"
+                />
+              </button>
+              <button
+                className="project-image"
+                onClick={() =>
+                  showingModal("website", [image.subpage!, image.subphone!])
+                }
+              >
+                <GatsbyImage
+                  image={image.subpage!}
+                  objectFit="fill"
+                  className="h-52  2xl:h-80"
+                  objectPosition="center"
+                  alt="image subphone"
+                  loading="eager"
                 />
               </button>
             </div>
-            <div className="project-info">
-              <h2 className="font-bold">{project.title}</h2>
-              <div className="project-description">{project.description}</div>
-              <p>Main Program : {project.mainProgram}</p>
-              <p>Dependencies : {project.dependencies.toString()}</p>
-              <a
-                href={project.url}
-                className="standard-btn p-1 absolute right-4 bottom-4"
-              >
-                <FontAwesomeIcon icon={faPaperPlane} />
-                Visit website
-              </a>
-            </div>
           </div>
-          <div className="project-image-container">
-            <button
-              className="project-image "
-              onClick={() =>
-                showingModal("website", [image.short!, image.mainphone!])
-              }
-            >
-              <GatsbyImage
-                image={image.short!}
-                objectFit="fill"
-                className="h-52  2xl:h-80"
-                objectPosition="center"
-                alt="image short"
-                loading="eager"
-              />
-            </button>
-            <button
-              className="project-image"
-              onClick={() =>
-                showingModal("website", [image.subpage!, image.subphone!])
-              }
-            >
-              <GatsbyImage
-                image={image.subpage!}
-                objectFit="fill"
-                className="h-52  2xl:h-80"
-                objectPosition="center"
-                alt="image subphone"
-                loading="eager"
-              />
-            </button>
-          </div>
-        </div>
-      </Layout>
+        </Layout>
+      </>
     );
   }
 };

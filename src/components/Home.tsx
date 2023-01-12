@@ -24,8 +24,9 @@ const Home = (props: Props) => {
       <Layout>
         <div className="main-container">
           <div className="main-tagline">
-            <h2 className="tagline">
-              Connecting your goals to your website design and application
+            <h2 className="tagline text-center ">
+              Connecting your Business goals to your website design and
+              application
             </h2>
           </div>
           <div className="slides-container">

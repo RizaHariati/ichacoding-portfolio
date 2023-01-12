@@ -59,8 +59,8 @@ export const projects: ProjectType[] = [
 export const aboutData = {
   message: [
     "Hello, I'm Riza Hariati (依扎 / Icha).",
-    "Welcome to my portfolio website showcasing a selected few of the websites I have built since 2020. I mostly work on Front End Developing, from design to testing to deployment, but I also dabble on the Back End.",
-    "My favorite programming tool is React.JS, but I also enjoy working with Laravel and I have created a few websites using it. ",
+    "Welcome to IchaCodes portfolio website showcasing a selected few of the websites I have built since 2020.",
+    "I mostly work on Front End Developing, from design to testing to deployment, and I also dabble on the Back End creating simple CRUD data. My favorite programming tool is React.JS, but I also enjoy working with Laravel and created a few websites using it.",
     "I have also used Java to help me learn algorithms and data structure, which was so much fun for me.",
     "Thank you for visiting!",
   ],
