@@ -43,7 +43,7 @@ const Projects = ({ pageContext: { project } }: any) => {
             {showModal.status && (
               <ImageModal setShowModal={setShowModal} showModal={showModal} />
             )}
-            <div className="project-info-container">
+            <div className="project-info-container  pb-14">
               <div className="project-phone">
                 <button
                   className="project-phone-image"
@@ -69,8 +69,19 @@ const Projects = ({ pageContext: { project } }: any) => {
                     }
                   )}
                 </div>
-                <p>Main Program : {project.mainProgram}</p>
-                <p>Dependencies : {project.dependencies.toString()}</p>
+                <p>
+                  <span className="border border-accent rounded-sm px-1 w-48 mr-2">
+                    Main Program{" "}
+                  </span>
+                  : {project.mainProgram}
+                </p>
+                <p>
+                  {" "}
+                  <span className="border border-accent rounded-sm px-1 w-48 mr-2">
+                    Dependencies{" "}
+                  </span>{" "}
+                  : {project.dependencies.toString()}
+                </p>
                 <a
                   href={project.url}
                   className="standard-btn p-1 absolute right-4 bottom-4"
@@ -90,7 +101,7 @@ const Projects = ({ pageContext: { project } }: any) => {
                 <GatsbyImage
                   image={image.short!}
                   objectFit="fill"
-                  className="h-52  2xl:h-80"
+                  className="h-44 sm:h-52 2xl:h-80"
                   objectPosition="center"
                   alt="image short"
                   loading="eager"
@@ -105,7 +116,7 @@ const Projects = ({ pageContext: { project } }: any) => {
                 <GatsbyImage
                   image={image.subpage!}
                   objectFit="fill"
-                  className="h-52  2xl:h-80"
+                  className="h-44 sm:h-52 2xl:h-80"
                   objectPosition="center"
                   alt="image subphone"
                   loading="eager"

@@ -6,7 +6,7 @@ const query = graphql`
     allImageSharp(
       filter: {
         original: {
-          src: { eq: "/static/snippet-e2e0fda756cde729ad38bab71bc96e3b.png" }
+          src: { eq: "/static/snippet-74369e8eba0e47320939dc2434a2fdc2.png" }
         }
       }
     ) {
@@ -44,7 +44,7 @@ export const SEO = ({ title, description, children }: Props) => {
   const seo = {
     title: title || "Home",
     description: description || "",
-    image: `${metaData.url}${siteImage}`,
+    image: `${metaData.image}`,
     url: `${metaData.url}`,
   };
 
@@ -53,10 +53,7 @@ export const SEO = ({ title, description, children }: Props) => {
       <title>IchaCodes | {seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:url" content={seo.url} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
+      <meta property="og:image" content={seo.image} />
 
       {children}
     </>
@@ -69,9 +66,6 @@ type HeadProps = {
 };
 export const Head = ({ title, description }: HeadProps) => (
   <SEO title={title} description={description}>
-    <p className="-z-10 fixed left-1/2 -translate-x-1/2 text-center top-2 text-xs flex flex-row gap-4">
-      Powered by Gatsby.JS copyright &copy;{new Date().getFullYear()} Riza
-      hariati for IchaCoding
-    </p>
+    <p className="-z-10 fixed left-1/2 -translate-x-1/2 text-center top-2 text-xs flex flex-row gap-4 w-full"></p>
   </SEO>
 );

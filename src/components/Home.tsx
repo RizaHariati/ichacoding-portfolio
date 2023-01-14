@@ -41,7 +41,7 @@ const Home = (props: Props) => {
                       <GatsbyImage
                         image={image.long!}
                         objectFit="fill"
-                        className=" h-48 sm:h-52 2xl:h-72"
+                        className=" h-52 2xl:h-72"
                         objectPosition="center"
                         alt={title}
                         loading="eager"
@@ -51,7 +51,7 @@ const Home = (props: Props) => {
                       <GatsbyImage
                         image={image.short!}
                         objectFit="fill"
-                        className="  h-48 sm:h-52 2xl:h-72 "
+                        className=" h-52 2xl:h-72 "
                         objectPosition="center"
                         alt={title}
                       />

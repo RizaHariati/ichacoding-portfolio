@@ -7,15 +7,14 @@ const Footer = (props: Props) => {
     <div className="footer-container">
       <div className=" bg-accent w-full h-0.5 rounded-full mb-auto"></div>
       <div className="footer-content">
+        <p className="footer-item">
+          Powered by Gatsby.JS copyright &copy;{new Date().getFullYear()}{" "}
+          IchaCoding &nbsp;
+        </p>
         <a href="https://www.freepik.com/pikisuperstar" className="footer-item">
-          Background by pikisuperstar / Freepik *
+          * Background by pikisuperstar / Freepik *
         </a>
-        <a
-          href="https://www.vecteezy.com/free-vector/phone"
-          className="footer-item"
-        >
-          &nbsp; Phone Vectors by Vecteezy
-        </a>
+
         <div className="footer-item">
           <a target="_blank" href="https://icons8.com/icon/76948/cash">
             &nbsp; Cash

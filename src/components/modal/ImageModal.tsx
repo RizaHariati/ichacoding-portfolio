@@ -11,7 +11,9 @@ type Props = {
 
 const ImageModal = ({ showModal, setShowModal }: Props) => {
   return (
-    <div className={showModal ? "modal-base-show" : "modal-base-hide"}>
+    <div
+      className={showModal ? "modal-base-show" : "modal-base-show opacity-0 "}
+    >
       <div className="modal-content">
         <div className="modal-container">
           <div className="modal-image-website ">

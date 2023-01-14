@@ -1,5 +1,6 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import { useGlobalContext } from "../../context/AppProvider";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
@@ -8,6 +9,10 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
+  const {
+    state: { allImages },
+  } = useGlobalContext();
+
   return (
     <div className="relative h-screen w-full ">
       <div className="absolute top-0 left-0  h-screen overflow-hidden resize-y -z-10">
@@ -19,7 +24,6 @@ const Layout = ({ children }: Props) => {
           className=" h-screen overflow-hidden resize-y "
         />
       </div>
-
       <Navbar />
       {children}
       <Footer />
