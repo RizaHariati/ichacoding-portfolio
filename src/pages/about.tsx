@@ -23,7 +23,7 @@ const about = (props: Props) => {
         />
         <Layout>
           <div className="about-container">
-            <div className="about-me">
+            <div className="about-me ">
               <div className="about-me-photo">
                 <GatsbyImage
                   image={allImages.profilePicSmall!}

@@ -23,7 +23,7 @@ const SlideInfo = ({
   slug,
 }: Props) => {
   return (
-    <div className="slide-base">
+    <div className="slide-base ">
       <div className="slide-phone">
         <GatsbyImage
           image={imageData}
@@ -36,14 +36,21 @@ const SlideInfo = ({
 
       <div className="slide-info">
         <h5 className="font-semibold">{title}</h5>
-        <p className="slide-description">{description[0].slice(0, 200)}</p>
+        <p className="slide-description shadow-black">
+          {description[0].slice(0, 200)}
+        </p>
         <p className="font-medium">Main Program : {mainProgram}</p>
         <div className="w-full flex gap-2 mt-1">
           <Link to={`/projects/${slug}`} className="standard-btn">
             <FontAwesomeIcon icon={faInfoCircle} />
             More...
           </Link>
-          <a href={url} className="standard-btn">
+          <a
+            href={url}
+            className="standard-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faPaperPlane} />
             Website
           </a>

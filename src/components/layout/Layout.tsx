@@ -9,10 +9,6 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-  const {
-    state: { allImages },
-  } = useGlobalContext();
-
   return (
     <div className="relative h-screen w-full ">
       <div className="absolute top-0 left-0  h-screen overflow-hidden resize-y -z-10">

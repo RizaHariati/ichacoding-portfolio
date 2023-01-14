@@ -22,23 +22,23 @@ const Navbar = () => {
             className=" cursor-pointer hover:opacity-70 transition-all flex flex-row
           items-center justify-start gap-x-2"
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover object-center overflow-hidden hover:opacity-75 transition-all sm:hidden md:block">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full hover:opacity-75 transition-all sm:hidden md:block overflow-hidden">
               <GatsbyImage
                 image={allImages?.iconLink!}
-                className="w-8 h-8 sm:w-10 sm:h-10  rounded-full"
-                objectFit="cover"
+                className="h-8  sm:h-10"
+                objectFit="fill"
                 objectPosition="center"
                 alt="IchaIcon"
               />
             </div>
-            <h1 className="text-textMed hidden sm:block lg:text-3xl transition-all opacity-0 sm:opacity-100">
+            <h1 className=" text-textDrk hidden sm:block lg:text-3xl transition-all opacity-0 sm:opacity-100">
               Icha<span className=" text-accent ">Codes</span>
             </h1>
           </Link>
 
           <div className="flex items-center justify-center gap-1">
             <Link to={pathname === "/" ? "/about/" : "/"}>
-              <div className="main-btn group">
+              <div className="main-btn group ">
                 <h4>{pathname === "/" ? "About" : "Home"}</h4>
                 <div className="icon-btn">
                   <GatsbyImage

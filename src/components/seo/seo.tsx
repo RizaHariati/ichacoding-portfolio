@@ -6,7 +6,9 @@ const query = graphql`
     allImageSharp(
       filter: {
         original: {
-          src: { eq: "/static/snippet-74369e8eba0e47320939dc2434a2fdc2.png" }
+          src: {
+            eq: "/static/samplebackground-aa31c6084ccde8e59c292e69af1cc9d1.png"
+          }
         }
       }
     ) {
@@ -44,17 +46,24 @@ export const SEO = ({ title, description, children }: Props) => {
   const seo = {
     title: title || "Home",
     description: description || "",
-    image: `${metaData.image}`,
-    url: `${metaData.url}`,
+    image: `${metaData.siteUrl}${siteImage}`,
+    url: `${metaData.siteUrl}`,
+    owner: `${metaData.owner}`,
   };
 
   return (
     <>
       <title>IchaCodes | {seo.title}</title>
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      <meta property="og:image" content={seo.image} />
-
+      <meta property="og:description" content={seo.description} />
+      <meta name="image" content={`${seo.image}`} />
+      <meta property="og:image" content={`${seo.image}`} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:creator" content={seo.owner} />
       {children}
     </>
   );

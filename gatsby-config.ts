@@ -3,8 +3,8 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `IchaCodes`,
-    description: `Portfolio of websites made by IchaCodes`,
-    owner: `@rizahariati`,
+    description: `Portfolio of websites made by Riza Hariati for IchaCodes`,
+    owner: `@Icha_Hariati`,
     image: `/images/snippet.png`,
     siteUrl: `https://www.ichacodes.com`,
   },
@@ -24,8 +24,8 @@ const config: GatsbyConfig = {
         name: `Riza Hariati`,
         short_name: `IchaCoding`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#dd8888`,
+        background_color: `#161310`,
+        theme_color: `#161310`,
         display: `minimal-ui`,
         icon: `src/images/favicon-32x32.png`,
       },

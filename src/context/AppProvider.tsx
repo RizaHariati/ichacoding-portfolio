@@ -16,7 +16,7 @@ export const result = graphql`
   query MyQuery {
     allImageSharp {
       nodes {
-        gatsbyImageData(height: 400, placeholder: DOMINANT_COLOR)
+        gatsbyImageData(height: 400, placeholder: TRACED_SVG)
         original {
           src
         }

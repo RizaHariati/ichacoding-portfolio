@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "../components/layout/Layout";
 import { Head } from "../components/seo/seo";
-import { useLocation } from "@reach/router";
 import { navigate } from "gatsby";
 
 type Props = {};

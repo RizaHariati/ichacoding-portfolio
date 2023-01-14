@@ -11,12 +11,21 @@ const Footer = (props: Props) => {
           Powered by Gatsby.JS copyright &copy;{new Date().getFullYear()}{" "}
           IchaCoding &nbsp;
         </p>
-        <a href="https://www.freepik.com/pikisuperstar" className="footer-item">
+        <a
+          href="https://www.freepik.com/pikisuperstar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="footer-item"
+        >
           * Background by pikisuperstar / Freepik *
         </a>
 
         <div className="footer-item">
-          <a target="_blank" href="https://icons8.com/icon/76948/cash">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://icons8.com/icon/76948/cash"
+          >
             &nbsp; Cash
           </a>
           icon by
