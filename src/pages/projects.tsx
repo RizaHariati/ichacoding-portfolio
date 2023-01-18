@@ -7,9 +7,11 @@ import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import ImageModal from "../components/modal/ImageModal";
 import { ShowModalType } from "../context/types.d";
-import { Head } from "../components/seo/seo";
+import { SEO } from "../components/seo/seo";
 
 const Projects = ({ pageContext: { project } }: any) => {
+  // page context didapat dari gatsby-none
+
   const {
     state: { portfolioImages },
   } = useGlobalContext();
@@ -37,7 +39,6 @@ const Projects = ({ pageContext: { project } }: any) => {
     const image = portfolioImages[project.slug];
     return (
       <>
-        <Head title={project.title} description={project.description[0]} />
         <Layout>
           <div className="project-container">
             {showModal.status && (
@@ -131,3 +132,11 @@ const Projects = ({ pageContext: { project } }: any) => {
 };
 
 export default Projects;
+
+export const Head = ({ pageContext: { project } }: any) => {
+  return (
+    <SEO title={project?.title} description={project?.description[0]}>
+      <link id="icon" rel="icon" href="/src/images/icon.png" />
+    </SEO>
+  );
+};

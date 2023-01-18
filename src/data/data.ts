@@ -50,7 +50,6 @@ export const projects: ProjectType[] = [
   },
   {
     id: "IC004",
-
     url: "https://azriclone.netlify.app/",
     title: "AzriClone",
     slug: "azriclone",
@@ -69,8 +68,10 @@ export const projects: ProjectType[] = [
 export const aboutData = {
   message: [
     "Hello, I'm Riza Hariati (依扎 / Icha).",
-    "Welcome to the IchaCodes portfolio website showcasing a selected few of the websites I have built since 2020.",
-    "I mostly work on Front End Developing, from design to testing to deployment, and I also dabble on the Back End creating simple CRUD data. My favorite programming tool is React.JS, but I also enjoy working with Laravel and created a few websites using it.",
+    "Websites and Digital Applications are a very important part of modern business, they have to be interesting, reliable, and reflect the business goals and personality, so they can attract the right customers.",
+    "As a part of the web and app developers world, I will create them for you.",
+    "I mostly work on Front End Developing, from designing to testing to deployment. I also dabble on the Back End creating simple CRUD data.",
+    "My favorite programming tool is React.JS, but I also enjoy working with Laravel and created a few websites using it.",
     "I have also used Java to help me learn algorithms and data structure, which was so much fun for me.",
     "Thank you for visiting!",
   ],

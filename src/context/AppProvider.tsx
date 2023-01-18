@@ -16,7 +16,7 @@ export const result = graphql`
   query MyQuery {
     allImageSharp {
       nodes {
-        gatsbyImageData(height: 400, placeholder: TRACED_SVG)
+        gatsbyImageData(height: 400, placeholder: DOMINANT_COLOR)
         original {
           src
         }
@@ -85,12 +85,12 @@ export const AppProvider = ({ children }: Props) => {
         });
       });
 
-      setTimeout(() => {
+     
         dispatch({
           type: "SET_ALL_IMAGES",
           payload: { allImages, portfolioImages },
         });
-      }, 1500);
+   
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -4,7 +4,6 @@ import React from "react";
 import { useGlobalContext } from "../context/AppProvider";
 import { ProjectType } from "../context/types.d";
 import { projects } from "../data/data";
-import Layout from "./layout/Layout";
 import SlideInfo from "./homeComponents/SlideInfo";
 
 type Props = {};

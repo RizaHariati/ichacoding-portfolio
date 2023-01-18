@@ -25,6 +25,7 @@ module.exports = {
         textDrk: "#e7e5e4",
         textMed: "#d6d3d1",
         textLit: "#a8a29e",
+        fillDrkSolid: "#292524",
         fillDrk: "#a8a29e31",
         fillDrkhover: "#a8a29e75",
         fillDrkactive: "#a8a29e96",

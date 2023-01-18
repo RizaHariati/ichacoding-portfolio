@@ -1,6 +1,5 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import { useGlobalContext } from "../../context/AppProvider";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 

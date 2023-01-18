@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env${process.env.NODE_ENV}`,
+});
+
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -14,7 +18,31 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-postcss",
-    // "gatsby-plugin-google-gtag",
+    "gatsby-plugin-no-sourcemaps",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.ichacodes.com",
+        sitemap: "https://www.ichacodes.com/sitemap-index.xml",
+        policy: [{ userAgent: "*", Disallow: "" }],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          process.env.GOOGLE_ID, // Google Analytics / GA
+          // "GTM-MHDVRVN", //Google Tag Management
+        ],
+
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Setting this parameter is also optional
+          respectDNT: true,
+        },
+      },
+    },
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
 
