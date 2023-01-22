@@ -8,7 +8,8 @@ const query = graphql`
         original: {
           src: {
             in: [
-              "/static/samplebackground-aa31c6084ccde8e59c292e69af1cc9d1.png"
+              "/static/snippet-663500e40beb6a4bd8bfe69c1191db2d.png"
+              "/static/samplebackground-ca20738802656f3be326bc78d18b88a4.png"
             ]
           }
         }
@@ -42,12 +43,14 @@ export const SEO = ({ title, description, children }: Props) => {
   const result = useStaticQuery(query);
   const metaData = result.site.siteMetadata;
   const imageStatic = result.allImageSharp;
-  const siteImage = imageStatic.nodes[0].original.src;
+  const twitterImage = imageStatic.nodes[0].original.src;
+  const siteImage = imageStatic.nodes[1].original.src;
 
   const seo = {
     title: title || "Project",
     description: description || `${metaData.description}`,
     image: `${metaData.siteUrl}${siteImage}`,
+    twitterimage: `${metaData.siteUrl}${twitterImage}`,
     url: `${metaData.siteUrl}`,
     owner: `${metaData.owner}`,
   };

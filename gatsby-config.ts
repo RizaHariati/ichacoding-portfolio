@@ -31,7 +31,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [
-          process.env.GOOGLE_ID, // Google Analytics / GA
+          "G-EWMH8D08F8", // Google Analytics / GA
           // "GTM-MHDVRVN", //Google Tag Management
         ],
 
