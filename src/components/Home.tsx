@@ -22,10 +22,11 @@ const Home = (props: Props) => {
     return (
       <div className="main-container">
         <div className="main-tagline">
-          <h2 className="tagline">
+          <h3 className="tagline">
             Connecting your Business goals to your website design and
             application
-          </h2>
+          </h3>{" "}
+          <h4 className="tagline">This page is made using Gatsby JS</h4>
         </div>
         <div className="slides-container">
           {projects.map((project: ProjectType) => {

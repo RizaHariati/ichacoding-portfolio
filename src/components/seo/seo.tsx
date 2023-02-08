@@ -54,17 +54,18 @@ export const SEO = ({ title, description, children }: Props) => {
     url: `${metaData.siteUrl}`,
     owner: `${metaData.owner}`,
   };
-
+  console.log(seo.image);
   return (
     <>
       <title>{`IchaCodes | ${seo.title}`}</title>
       <meta property="og:description" content={seo.description} />
       <meta name="keywords" content="rizahariati, riza hariati, icha hariati" />
       <meta property="og:image" content={`${seo.image}`} />
+      <meta property="og:url" content={seo.url} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
-      <meta property="og:url" content={seo.url} />
       <meta name="twitter:creator" content={seo.owner} />
+      <meta name="twitter:image" content={seo.twitterimage} />
       <link rel="canonical" href={seo.url} />
       {children}
     </>

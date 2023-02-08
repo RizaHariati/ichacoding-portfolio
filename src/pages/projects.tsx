@@ -36,7 +36,8 @@ const Projects = ({ pageContext: { project } }: any) => {
   ) {
     return <div></div>;
   } else {
-    const image = portfolioImages[project.slug];
+    const image =
+      portfolioImages[project?.slug] || portfolioImages["bayarplanner"];
     return (
       <>
         <Layout>
@@ -57,34 +58,44 @@ const Projects = ({ pageContext: { project } }: any) => {
                     objectFit="fill"
                     className=" w-32 h-52 2xl:h-80"
                     objectPosition="center"
-                    alt={project.title}
+                    alt={project?.title || "bayarplanner"}
                   />
                 </button>
               </div>
               <div className="project-info">
-                <h2 className="font-bold">{project.title}</h2>
+                <h2 className="font-bold">
+                  {project?.title || "bayarplanner"}
+                </h2>
                 <div className="project-description">
-                  {project.description.map(
+                  {project?.description.map(
                     (projectItem: string, projectIndex: number) => {
                       return <p key={projectIndex}>{projectItem}</p>;
                     }
+                  ) || (
+                    <p>
+                      "BayarPlanner is a website that schedules and records
+                      daily financial transactions, also calculates data to
+                      create simple invoices"
+                    </p>
                   )}
                 </div>
                 <p>
                   <span className="border border-accent rounded-sm px-1 w-48 mr-2">
                     Main Program{" "}
                   </span>
-                  : {project.mainProgram}
+                  : {project?.mainProgram || "React.js"}
                 </p>
                 <p>
                   {" "}
                   <span className="border border-accent rounded-sm px-1 w-48 mr-2">
                     Dependencies{" "}
                   </span>{" "}
-                  : {project.dependencies.toString()}
+                  :{" "}
+                  {project?.dependencies.toString() ||
+                    "Tailwind CSS,Typescript, useContext, useReducer, React datepicker"}
                 </p>
                 <a
-                  href={project.url}
+                  href={project?.url || "https://bayarplanner.com/"}
                   className="standard-btn p-1 absolute right-4 bottom-4"
                 >
                   <FontAwesomeIcon icon={faPaperPlane} />
@@ -135,7 +146,13 @@ export default Projects;
 
 export const Head = ({ pageContext: { project } }: any) => {
   return (
-    <SEO title={project?.title} description={project?.description[0]}>
+    <SEO
+      title={project?.title || "BayarPlanner"}
+      description={
+        project?.description[0] ||
+        "BayarPlanner is a website that schedules and records daily financial transactions, also calculates data to create simple invoices"
+      }
+    >
       <link id="icon" rel="icon" href="/src/images/icon.png" />
     </SEO>
   );
