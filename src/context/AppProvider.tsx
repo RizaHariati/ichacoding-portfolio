@@ -16,7 +16,7 @@ export const result = graphql`
   query MyQuery {
     allImageSharp {
       nodes {
-        gatsbyImageData(height: 400, placeholder: DOMINANT_COLOR)
+        gatsbyImageData(layout: CONSTRAINED, quality: 50)
         original {
           src
         }
@@ -85,12 +85,10 @@ export const AppProvider = ({ children }: Props) => {
         });
       });
 
-     
-        dispatch({
-          type: "SET_ALL_IMAGES",
-          payload: { allImages, portfolioImages },
-        });
-   
+      dispatch({
+        type: "SET_ALL_IMAGES",
+        payload: { allImages, portfolioImages },
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

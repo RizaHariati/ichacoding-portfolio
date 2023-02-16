@@ -11,16 +11,21 @@ type Props = {
 
 const ImageModal = ({ showModal, setShowModal }: Props) => {
   return (
-    <div
-      className={showModal ? "modal-base-show" : "modal-base-show opacity-0 "}
-    >
+    <div className={showModal ? "modal-base-show" : "modal-base-hide "}>
       <div className="modal-content">
-        <div className="modal-container">
+        <div
+          className="modal-container"
+          style={
+            window.innerWidth < 450 || window.innerHeight < 450
+              ? { width: 310 }
+              : { width: "fit-content" }
+          }
+        >
           <div className="modal-image-website ">
             <GatsbyImage
               image={showModal.value[0]}
-              objectFit="fill"
-              className="h-full"
+              objectFit="cover"
+              className="w-full"
               objectPosition="center"
               alt="image short"
               loading="eager"
@@ -29,8 +34,8 @@ const ImageModal = ({ showModal, setShowModal }: Props) => {
           <div className="modal-image-phone ">
             <GatsbyImage
               image={showModal.value[1]}
-              objectFit="fill"
-              className="h-full "
+              objectFit="cover"
+              className="w-full "
               objectPosition="center"
               alt="image short"
               loading="eager"

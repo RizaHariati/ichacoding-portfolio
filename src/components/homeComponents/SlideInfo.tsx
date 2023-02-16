@@ -27,8 +27,8 @@ const SlideInfo = ({
       <div className="slide-phone">
         <GatsbyImage
           image={imageData}
-          objectFit="fill"
-          className=" h-52  2xl:h-72 "
+          objectFit="cover"
+          className=" h-full "
           objectPosition="center"
           alt={title}
         />

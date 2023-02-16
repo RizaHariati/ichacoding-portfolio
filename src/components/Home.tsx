@@ -34,12 +34,20 @@ const Home = (props: Props) => {
             const image = portfolioImages[slug];
             return (
               <div className=" slides" key={id}>
-                <div className="slides-content group">
+                <div
+                  className={
+                    window.innerWidth < 370
+                      ? "slides-content group h-52 2xl:h-72"
+                      : "slides-content group h-60 2xl:h-72"
+                  }
+                >
                   <div className="slide-website hidden sm:block ">
                     <GatsbyImage
-                      image={image.long!}
-                      objectFit="fill"
-                      className=" h-52 2xl:h-72"
+                      image={
+                        window.innerWidth > 1535 ? image.long! : image.short!
+                      }
+                      objectFit="cover"
+                      className="w-full"
                       objectPosition="center"
                       alt={title}
                       loading="eager"
@@ -47,9 +55,11 @@ const Home = (props: Props) => {
                   </div>
                   <div className="slide-website block sm:hidden ">
                     <GatsbyImage
-                      image={image.short!}
-                      objectFit="fill"
-                      className=" h-52 2xl:h-72 "
+                      image={
+                        window.innerWidth > 1535 ? image.long! : image.short!
+                      }
+                      objectFit="cover"
+                      className="w-full "
                       objectPosition="center"
                       alt={title}
                     />
@@ -67,8 +77,8 @@ const Home = (props: Props) => {
                   <div className="slide-logo  ">
                     <GatsbyImage
                       image={image.logo!}
-                      className="w-5 h-5 2xl:w-8 2xl:h-8 "
-                      objectFit="fill"
+                      className="h-full "
+                      objectFit="cover"
                       objectPosition="center"
                       alt={title}
                     />

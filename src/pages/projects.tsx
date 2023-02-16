@@ -55,8 +55,8 @@ const Projects = ({ pageContext: { project } }: any) => {
                 >
                   <GatsbyImage
                     image={image.mainphone!}
-                    objectFit="fill"
-                    className=" w-32 h-52 2xl:h-80"
+                    objectFit="cover"
+                    className=" h-full"
                     objectPosition="center"
                     alt={project?.title || "bayarplanner"}
                   />
@@ -105,30 +105,38 @@ const Projects = ({ pageContext: { project } }: any) => {
             </div>
             <div className="project-image-container">
               <button
-                className="project-image "
+                className={
+                  window.innerWidth < 370
+                    ? "project-image-short "
+                    : "project-image-medium "
+                }
                 onClick={() =>
                   showingModal("website", [image.short!, image.mainphone!])
                 }
               >
                 <GatsbyImage
                   image={image.short!}
-                  objectFit="fill"
-                  className="h-44 sm:h-52 2xl:h-80"
+                  objectFit="cover"
+                  className="h-full w-auto"
                   objectPosition="center"
                   alt="image short"
                   loading="eager"
                 />
               </button>
               <button
-                className="project-image"
+                className={
+                  window.innerWidth < 370
+                    ? "project-image-short "
+                    : "project-image-medium "
+                }
                 onClick={() =>
                   showingModal("website", [image.subpage!, image.subphone!])
                 }
               >
                 <GatsbyImage
                   image={image.subpage!}
-                  objectFit="fill"
-                  className="h-44 sm:h-52 2xl:h-80"
+                  objectFit="cover"
+                  className="h-full w-auto"
                   objectPosition="center"
                   alt="image subphone"
                   loading="eager"

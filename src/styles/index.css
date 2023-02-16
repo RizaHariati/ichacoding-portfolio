@@ -26,7 +26,7 @@
 @layer components {
   .main-container {
     height: calc(100vh - 106px);
-    @apply w-full overflow-y-scroll flex flex-col items-center justify-start md:overflow-hidden md:pb-0;
+    @apply w-full overflow-y-scroll flex flex-col items-center justify-start md:pb-0;
   }
   .main-container::-webkit-scrollbar {
     display: none;
@@ -35,7 +35,7 @@
   @media screen and (min-width: 780px) {
     .main-container {
       height: calc(100vh - 84px);
-      @apply w-full overflow-y-scroll flex flex-col items-center justify-start md:overflow-hidden md:pb-0 md:justify-evenly;
+      @apply w-full overflow-y-scroll flex flex-col items-center justify-start md:pb-0;
     }
     .main-container::-webkit-scrollbar {
       display: none;
@@ -59,7 +59,7 @@
     @apply flex flex-col gap-y-1 2xl:gap-y-3;
   }
   .slides-content {
-    @apply w-full h-52 2xl:h-72 bg-fillDrk bg-opacity-50 max-w-sm mx-auto 2xl:max-w-lg rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden shadow-sm shadow-fillDrkactive;
+    @apply w-full  2xl:h-72 bg-fillDrk bg-opacity-50 max-w-sm mx-auto 2xl:max-w-lg rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden shadow-sm shadow-fillDrkactive;
   }
   .social-container {
     @apply flex gap-1 items-center justify-center;
@@ -72,7 +72,7 @@
     @apply absolute left-0 w-0 group-hover:w-full h-full  opacity-0 group-hover:opacity-100 grid grid-cols-6 sm:grid-cols-7 sm:gap-2 transition-all;
   }
   .slide-phone {
-    @apply col-span-2 w-full rounded-sm 2xl:rounded-md h-52  2xl:h-72 overflow-hidden shadow-md shadow-black;
+    @apply col-span-2 w-full rounded-sm 2xl:rounded-md h-full  2xl:h-72 overflow-hidden shadow-md shadow-black;
   }
 
   .slide-info {
@@ -107,7 +107,7 @@
   }
 
   .close-btn {
-    @apply absolute bottom-3 left-1/2 -translate-x-1/2 text-red-500 shadow-sm shadow-black rounded-full cursor-pointer;
+    @apply absolute bottom-3 left-1/2 -translate-x-1/2 text-textLit shadow-sm shadow-black rounded-full cursor-pointer animate-pulse h-5 w-5;
   }
   .footer-container {
     @apply absolute bottom-0 md:bottom-0 text-xs  pb-2 h-fit leading-3 flex flex-col items-center justify-center text-center w-full z-10 font-normal px-3 overflow-hidden bg-fillDrkSolid;
@@ -123,7 +123,7 @@
 
   .about-container {
     height: calc(100vh - 106px);
-    @apply mx-auto w-full max-w-4xl 2xl:max-w-6xl font-medium mt-4 md:mt-2 2xl:mt-10 px-4 md:px-2 overflow-y-scroll md:overflow-hidden block md:flex md:flex-col justify-start  items-center md:justify-center;
+    @apply mx-auto w-full max-w-4xl 2xl:max-w-6xl font-medium mt-4 md:mt-2 2xl:mt-10 px-4 md:px-2 overflow-y-scroll  block md:flex md:flex-col justify-start  items-center md:justify-center;
   }
   .about-container::-webkit-scrollbar {
     display: none;
@@ -189,20 +189,23 @@
     @apply leading-5 text-textLit;
   }
   .project-phone-image {
-    @apply col-span-2 w-32 h-52 hidden md:block rounded-md overflow-hidden transition-all cursor-pointer z-10;
+    @apply col-span-2 w-32 h-full hidden md:block rounded-md overflow-hidden transition-all cursor-pointer z-10;
   }
 
   .project-image-container {
-    @apply w-full grid grid-cols-1 md:grid-cols-2 px-6 py-4 gap-4 2xl:gap-x-0 2xl:gap-y-6 max-w-4xl 2xl:max-w-6xl 2xl:p-6 2xl:py-10;
+    @apply w-full h-fit grid grid-cols-1 md:grid-cols-2 md:px-2 py-4 gap-4 2xl:gap-x-0 2xl:gap-y-6 max-w-4xl 2xl:max-w-6xl 2xl:p-6 2xl:py-10 pb-14;
   }
-  .project-image {
-    @apply w-full h-44 sm:h-52 2xl:h-80 bg-fillDrk bg-opacity-70 max-w-sm mx-auto 2xl:max-w-md rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden shadow-sm hover:scale-105 transition-all;
+  .project-image-short {
+    @apply w-full h-52 sm:h-52 2xl:h-80 bg-fillDrk bg-opacity-100 max-w-sm mx-auto 2xl:max-w-md rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden hover:scale-105 transition-all shadow-inner shadow-shadow p-1;
+  }
+  .project-image-medium {
+    @apply w-full h-60 sm:h-52 2xl:h-80 bg-fillDrk bg-opacity-100 max-w-sm mx-auto 2xl:max-w-md rounded-sm 2xl:rounded-md cursor-pointer relative overflow-hidden hover:scale-105 transition-all shadow-inner shadow-shadow p-1;
   }
 
   /* ----------------------------- modal ---------------------------- */
 
   .modal-base-show {
-    @apply fixed top-0 left-0 bg-fillDrkhover opacity-100 bg-opacity-50 z-30 w-full h-screen transition-all;
+    @apply fixed top-0 left-0 bg-backgroundOpacity opacity-100 bg-opacity-50 z-30 w-full h-screen transition-all;
   }
   .modal-base-hide {
     @apply modal-base-show opacity-0;
@@ -211,12 +214,16 @@
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full  z-40  flex items-center justify-center transition-all;
   }
   .modal-container {
-    @apply bg-fillDrk mx-auto rounded-sm flex items-center justify-center transition-all 2xl:scale-125  relative h-fit md:max-w-xl 2xl:h-1/2 2xl:max-w-2xl w-fit;
+    @apply bg-fillDrk mx-auto rounded-sm flex items-center justify-center transition-all 2xl:scale-125  relative   bg-fillMed p-1 pb-10 shadow-black shadow-md origin-center animate-popImage;
   }
   .modal-image-website {
-    @apply hidden h-full md:block mx-auto;
+    width: 600px;
+    height: 600px;
+    @apply hidden h-full sm:block mx-auto animate-newPulse;
   }
   .modal-image-phone {
-    @apply block h-full w-full md:hidden mx-auto;
+    width: 300px;
+    height: 600px;
+    @apply block h-full w-full sm:hidden mx-auto animate-newPulse;
   }
 }
